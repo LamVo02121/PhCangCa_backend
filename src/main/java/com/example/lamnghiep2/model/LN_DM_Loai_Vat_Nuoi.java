@@ -8,45 +8,46 @@ import java.sql.Timestamp;
 @Table(name = "LN_DM_Loai_Vat_Nuoi")
 public class LN_DM_Loai_Vat_Nuoi {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "code", columnDefinition="VARCHAR(255)", nullable = false)
+    @Column(name = "code",length = 255, nullable = false)
     private String code;
 
-    @Column(name = "name", columnDefinition="VARCHAR(255)", nullable = false)
+    @Column(name = "name", length = 255, nullable = false)
     private String name;
 
-    @Column(name = "description", columnDefinition = "VARCHAR(255)")
+    @Column(name = "description", length = 255)
     private String description;
 
+    @Column(name = "is_active", nullable = true)
     private boolean is_active;
+    @Column(name = "is_delete", nullable = true)
     private boolean is_delete;
 
-    @Column(name = "create_user", columnDefinition = "VARCHAR(255)", nullable = false)
+    @Column(name = "create_user", length = 255)
     private String create_user;
 
-    @Column(name = "create_username", columnDefinition = "VARCHAR(255)")
+    @Column(name = "create_username", length = 255)
     private String create_username;
 
-    @Column(name = "create_date", nullable = false)
-    private Timestamp create_date;
-    @Column(name = "update_date", nullable = false)
+    @Column(name = "update_date", columnDefinition = "Timestamp DEFAULT CURRENT_TIMESTAMP")
+//    @CreationTimestamp
     private Timestamp update_date;
 
-    @Column(name = "update_user", columnDefinition = "VARCHAR(255)")
+    @Column(name = "update_user", length = 255)
     private String update_user;
 
-    @Column(name = "update_username", columnDefinition = "VARCHAR(255)")
+    @Column(name = "update_username", length = 255)
     private String update_username;
 
-    @Column(name = "delete_user", columnDefinition = "VARCHAR(255)")
+    @Column(name = "delete_user", length = 255)
     private String delete_user;
 
-    @Column(name = "delete_username", columnDefinition = "VARCHAR(255)")
+    @Column(name = "delete_username", length = 255)
     private String delete_username;
 
-    @Column(name = "uid", columnDefinition = "VARCHAR(50)", nullable = false)
+    @Column(name = "uid", length = 50)
     private String uid;
 
     public int getId() {
@@ -113,14 +114,6 @@ public class LN_DM_Loai_Vat_Nuoi {
         this.create_username = create_username;
     }
 
-    public Timestamp getCreate_date() {
-        return create_date;
-    }
-
-    public void setCreate_date(Timestamp create_date) {
-        this.create_date = create_date;
-    }
-
     public Timestamp getUpdate_date() {
         return update_date;
     }
@@ -166,27 +159,6 @@ public class LN_DM_Loai_Vat_Nuoi {
     }
 
     public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    public LN_DM_Loai_Vat_Nuoi() {
-    }
-
-    public LN_DM_Loai_Vat_Nuoi(int id, String code, String name, String description, boolean is_active, boolean is_delete, String create_user, String create_username, Timestamp create_date, Timestamp update_date, String update_user, String update_username, String delete_user, String delete_username, String uid) {
-        this.id = id;
-        this.code = code;
-        this.name = name;
-        this.description = description;
-        this.is_active = is_active;
-        this.is_delete = is_delete;
-        this.create_user = create_user;
-        this.create_username = create_username;
-        this.create_date = create_date;
-        this.update_date = update_date;
-        this.update_user = update_user;
-        this.update_username = update_username;
-        this.delete_user = delete_user;
-        this.delete_username = delete_username;
         this.uid = uid;
     }
 }

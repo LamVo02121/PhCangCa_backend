@@ -3,8 +3,8 @@ package com.example.lamnghiep2.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "account")
-public class account {
+@Table(name = "ln_account")
+public class LN_Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,7 +1,6 @@
 package com.example.lamnghiep2.model;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 

@@ -1,7 +1,6 @@
 package com.example.lamnghiep2.service;
 
 import com.example.lamnghiep2.model.LN_DM_Nguon_Goc;
-import com.example.lamnghiep2.model.account;
 import com.example.lamnghiep2.repository.NguonGocRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

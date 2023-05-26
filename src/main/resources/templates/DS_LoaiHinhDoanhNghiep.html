@@ -10,12 +10,12 @@
 <body>
 <div class="container">
   <div class="row text-center">
-    <h1>Quản lý danh mục loại vật nuôi</h1>
+    <h1>Quản lý danh mục loại hình doanh nghiệp</h1>
   </div>
 
   <!--  Table-->
   <div class="row mt-3">
-    <a th:href="@{/add_LoaiVatNuoi}"><button class="btn btn-success">Thêm loại vật nuôi</button></a>
+    <a th:href="@{/add_LoaiHinhDoanhNghiep}"><button class="btn btn-success">Thêm loại loại hình doanh nghiệp</button></a>
     <table class="table table-striped">
       <thead>
       <tr>
@@ -28,7 +28,7 @@
       </tr>
       </thead>
       <tbody>
-      <th:block th:each="item : ${listLNLoaiVatNuoi}">
+      <th:block th:each="item : ${listLNLoaiHinhDoanhNghiep}">
         <tr>
           <td>[[${item.id}]]</td>
           <td>[[${item.code}]]</td>
@@ -36,8 +36,8 @@
           <td>[[${item.description}]]</td>
           <td>[[${item.update_date}]]</td>
           <td>
-            <a th:href="@{'/loaivatnuoi/edit/' + ${item.id}}"><button class="btn btn-warning">Sữa</button></a>
-            <a th:href="@{'/loaivatnuoi/delete/' + ${item.id}}"><button class="btn btn-danger">Xóa</button></a>
+            <a th:href="@{'/loaihinhdoanhnghiep/edit/' + ${item.id}}"><button class="btn btn-warning">Sữa</button></a>
+            <a th:href="@{'/loaihinhdoanhnghiep/delete/' + ${item.id}}"><button class="btn btn-danger">Xóa</button></a>
           </td>
         </tr>
       </th:block>

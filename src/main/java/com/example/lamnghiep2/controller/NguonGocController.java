@@ -26,14 +26,14 @@ public class NguonGocController {
     }
 
     @GetMapping("/add_Nguongoc")
-    public String addAccount(Model model) {
+    public String addNguonGoc(Model model) {
         model.addAttribute("Nguon_Goc", new LN_DM_Nguon_Goc());
         model.addAttribute("pageTitle", "Thêm nguồn gốc");
         return "form_add_nguon_goc";
     }
 
     @PostMapping ("/nguongoc/save")
-    public String addAccount(LN_DM_Nguon_Goc N_Goc) {
+    public String saveNguonGoc(LN_DM_Nguon_Goc N_Goc) {
         service.save(N_Goc);
         return "redirect:/qly_dm_nguon_goc";
     }
@@ -52,7 +52,7 @@ public class NguonGocController {
     }
 
     @GetMapping("/nguongoc/delete/{id}")
-    public String deleteAccount(@PathVariable("id") Integer id, RedirectAttributes ra) {
+    public String deleteNguonGoc(@PathVariable("id") Integer id, RedirectAttributes ra) {
         try {
             service.delete(id);
         } catch (NguonGocNotFoundException e) {

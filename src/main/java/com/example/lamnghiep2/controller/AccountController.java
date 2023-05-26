@@ -32,7 +32,7 @@ public class AccountController {
     }
 
     @PostMapping ("/account/save")
-    public String addAccount(LN_Account acc) {
+    public String saveAccount(LN_Account acc) {
         service.save(acc);
         return "redirect:/qly_account";
     }

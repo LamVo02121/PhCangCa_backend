@@ -13,7 +13,7 @@
     <h1>[[${pageTitle}]]</h1>
   </div>
   <div class="row justify-content-center">
-    <form th:action="@{/loaivatnuoi/save}" method="post" th:object="${LoaiVatNuoi}" style="max-width: 600px;">
+    <form th:action="@{/loaihinhdoanhnghiep/save}" method="post" th:object="${LoaiHinhDoanhNghiep}" style="max-width: 600px;">
       <div class="border border-secondary rounded" style="padding: 20px 20px;">
         <input type="hidden" th:field="*{id}">
 
@@ -23,7 +23,7 @@
         </div>
 
         <div class="form-group" row>
-          <label for="name" class="form-label col-sm-4">Tên loại vật nuôi: </label>
+          <label for="name" class="form-label col-sm-4">Tên loại hình D.Nghiệp: </label>
           <input type="text" class="form-control col-sm-8" id="name" th:field="*{name}" minlength="1" maxlength="255">
         </div>
 
@@ -34,7 +34,7 @@
 
         <div class="text-center mt-3" style="right: 0;">
           <button type="submit" class="btn btn-primary">Save</button>
-          <a th:href="@{/qly_dm_nguon_goc}"><button type="button" class="btn btn-secondary">Cancel</button></a>
+          <a th:href="@{/qly_loại_hinh_doanh_nghiep}"><button type="button" class="btn btn-secondary">Cancel</button></a>
         </div>
       </div>
     </form>

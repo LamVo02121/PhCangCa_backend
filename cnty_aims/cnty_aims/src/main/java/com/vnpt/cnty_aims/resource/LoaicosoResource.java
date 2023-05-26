@@ -4,6 +4,7 @@ import com.vnpt.cnty_aims.dao.LoaicosoDao;
 import com.vnpt.cnty_aims.dto.base.PostResponseBaseDto;
 import com.vnpt.cnty_aims.dto.request.SuaLoaicosoDto;
 import com.vnpt.cnty_aims.dto.request.ThemLoaicosoDto;
+import com.vnpt.cnty_aims.dto.request.TimLoaicosoDto;
 import com.vnpt.cnty_aims.dto.request.XoaLoaicosoDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,11 @@ public class LoaicosoResource {
     public ResponseEntity listLoaicoso() {
         return  ResponseEntity.ok().body(loaicosoDao.listLoaicoso());
 
+    }
+
+    @GetMapping("/tim_loai_co_so")
+    public ResponseEntity SearchByName(@RequestBody TimLoaicosoDto request) {
+        return  ResponseEntity.ok().body(loaicosoDao.SearchByName(request.getName()));
     }
 
     @PutMapping("/cnty_dm_loai_co_so")

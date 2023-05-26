@@ -30,6 +30,12 @@ public class LoaicosoDaoImpl implements LoaicosoDao {
     }
 
     @Override
+    public List<Map<String, Object>> SearchByName(String name){
+        String sql = "{ call SearchByName(?)}";
+        return jdbcTemplate.queryForList(sql, name);
+    }
+
+    @Override
     public int themLoaicoso(String name, String code, String quy_mo, String loai_hinh) {
         String sql = "{ call cnty_aims.themLoaicoso(?,?,?,?)}";
         int affRow = jdbcTemplate.update(sql, name, code, quy_mo, loai_hinh);

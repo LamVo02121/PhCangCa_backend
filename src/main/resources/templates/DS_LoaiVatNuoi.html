@@ -10,12 +10,12 @@
 <body>
 <div class="container">
   <div class="row text-center">
-    <h1>Quản lý danh mục nguồn gốc</h1>
+    <h1>Quản lý danh mục loại vật nuôi</h1>
   </div>
 
-<!--  Table-->
+  <!--  Table-->
   <div class="row mt-3">
-    <a th:href="@{/add_Nguongoc}"><button class="btn btn-success">Thêm nguồn gốc</button></a>
+    <a th:href="@{/add_LoaiVatNuoi}"><button class="btn btn-success">Thêm loại vật nuôi</button></a>
     <table class="table table-striped">
       <thead>
       <tr>
@@ -28,7 +28,7 @@
       </tr>
       </thead>
       <tbody>
-      <th:block th:each="item : ${listDmNguonGoc}">
+      <th:block th:each="item : ${listLNLoaiVatNuoi}">
         <tr>
           <td>[[${item.id}]]</td>
           <td>[[${item.code}]]</td>

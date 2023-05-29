@@ -19,6 +19,7 @@
             <thead>
             <tr>
                 <th>ID</th>
+                <th>Mã loại tàu</th>
                 <th>Tên Loại Tàu</th>
                 <th>Người tạo</th>
                 <th>Ngày tạo</th>
@@ -33,6 +34,7 @@
             <th:block th:each="loaitau : ${listLoaitau}">
                 <tr>
                     <td>[[${loaitau.id}]]</td>
+                    <td>[[${loaitau.maLT}]]</td>
                     <td>[[${loaitau.tenLT}]]</td>
                     <td>[[${loaitau.taoUser}]]</td>
                     <td>[[${loaitau.taoNgay}]]</td>

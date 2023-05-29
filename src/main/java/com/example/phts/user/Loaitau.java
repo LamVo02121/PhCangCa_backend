@@ -7,7 +7,10 @@ import jakarta.persistence.*;
 public class Loaitau {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer maLT;
+    private Integer id;
+
+    private String maLT;
+
     @Column(nullable = false, length=50 )
     private String tenLT;
     private String taoUser;
@@ -16,11 +19,19 @@ public class Loaitau {
     private String xoaUser;
     private String xoaNgay;
 
-    public Integer getMaLT() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMaLT() {
         return maLT;
     }
 
-    public void setMaLT(Integer maLT) {
+    public void setMaLT(String maLT) {
         this.maLT = maLT;
     }
 

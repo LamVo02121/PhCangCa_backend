@@ -4,6 +4,8 @@ import com.example.lamnghiep2.model.LN_Account;
 import com.example.lamnghiep2.service.AccountService;
 import com.example.lamnghiep2.service.accountNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +20,10 @@ public class AccountController {
     @Autowired private AccountService service;
 
     @GetMapping("/qly_account")
-    public String qlyAccount(Model model) {
+    public ResponseEntity<List<LN_Account>> qlyAccount(Model model) {
         List<LN_Account> listLNAccount = service.listAll();
         model.addAttribute("listLNAccount", listLNAccount);
-        return "DS_Account";
+        return new ResponseEntity<List<LN_Account>>(listLNAccount, HttpStatus.OK);
     }
 
     @GetMapping("/add_account")

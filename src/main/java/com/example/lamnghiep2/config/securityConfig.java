@@ -10,11 +10,19 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 public class securityConfig {
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .anyRequest().authenticated()
-                .and()
-                .oauth2Login(withDefaults());
-        return http.build();
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests( auth -> {
+                    auth.requestMatchers("/**").permitAll();
+                    auth.requestMatchers("/").permitAll();
+//                    auth.anyRequest().permitAll();
+                    auth.anyRequest().authenticated();
+                })
+                .oauth2Login(withDefaults())
+                .formLogin(withDefaults())
+                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.disable())
+                .build();
     }
+
 }

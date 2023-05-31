@@ -4,8 +4,11 @@ import com.example.lamnghiep2.model.LN_DM_Loai_Vat_Nuoi;
 import com.example.lamnghiep2.service.LoaiVatNuoiNotFoundException;
 import com.example.lamnghiep2.service.LoaiVatNuoiService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,14 +17,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @Controller
+@CrossOrigin("http://127.0.0.1:4200/")
 public class LoaiVatNuoiController {
     @Autowired private LoaiVatNuoiService service;
 
     @GetMapping("/qly_loai_vat_nuoi")
-    public String qlyLoaiVatNuoi(Model model) {
+    public ResponseEntity<List<LN_DM_Loai_Vat_Nuoi>> qlyLoaiVatNuoi(Model model) {
         List<LN_DM_Loai_Vat_Nuoi> listLNLoaiVatNuoi = service.listAll();
         model.addAttribute("listLNLoaiVatNuoi", listLNLoaiVatNuoi);
-        return "DS_LoaiVatNuoi";
+        return new ResponseEntity<List<LN_DM_Loai_Vat_Nuoi>>(listLNLoaiVatNuoi, HttpStatus.OK);
     }
 
     @GetMapping("/add_LoaiVatNuoi")

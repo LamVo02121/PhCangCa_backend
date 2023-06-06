@@ -1,6 +1,5 @@
 package com.example.PhCangCa;
 
-<<<<<<< HEAD
 import org.apache.catalina.filters.CorsFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,24 +9,14 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
-=======
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
->>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
 
 @SpringBootApplication
 //@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 public class PhCangCaApplication {
-<<<<<<< HEAD
-=======
-
->>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
 	public static void main(String[] args) {
 		SpringApplication.run(PhCangCaApplication.class, args);
 	}
 
-<<<<<<< HEAD
 //	@Bean
 //	public CorsFilter corsFilter() {
 //		CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -44,6 +33,4 @@ public class PhCangCaApplication {
 //		return new CorsFilter();
 //	}
 
-=======
->>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
 }

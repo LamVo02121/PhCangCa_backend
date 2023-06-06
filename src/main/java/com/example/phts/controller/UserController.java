@@ -4,8 +4,11 @@ import com.example.phts.service.UserNotFoundException;
 import com.example.phts.service.UserService;
 import com.example.phts.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,13 +18,25 @@ import java.util.List;
 
 @Controller
 public class UserController {
-    @Autowired private UserService service;
+    @Autowired
+    private UserService service;
 
+//    @GetMapping("/employees")
+//    public String showUserList(Model model){
+//        List<User> listUsers = service.listAll();
+//        model.addAttribute("listUsers", listUsers);
+//        return "employees";
+//    }
     @GetMapping("/employees")
-    public String showUserList(Model model){
-        List<User> listUsers = service.listAll();
-        model.addAttribute("listUsers", listUsers);
-        return "employees";
+    public ResponseEntity<List<User>> showUserList(Model model) {
+        List<User> listUser= service.listAll();
+        model.addAttribute("listUser", listUser);
+        return new ResponseEntity<List<User>>(listUser, HttpStatus.OK);
+    }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable("id")Integer id) throws UserNotFoundException {
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/employees/new")
@@ -62,9 +77,4 @@ public class UserController {
         }
         return "redirect:/employees";
     }
-
-
-
-
-
 }

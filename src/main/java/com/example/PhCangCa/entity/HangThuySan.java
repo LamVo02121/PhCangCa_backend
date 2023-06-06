@@ -2,12 +2,19 @@ package com.example.PhCangCa.entity;
 
 import jakarta.persistence.*;
 
+<<<<<<< HEAD
 import java.io.Serializable;
+=======
+>>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
 import java.util.Date;
 
 @Entity
 @Table(name = "cgca_dm_hangthuysan")
+<<<<<<< HEAD
 public class HangThuySan implements Serializable {
+=======
+public class HangThuySan {
+>>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID_Loai")
@@ -25,7 +32,11 @@ public class HangThuySan implements Serializable {
     @Column(name = "create_date")
     private String createDate;
     @Column(name = "update_date")
+<<<<<<< HEAD
     private String updateDate;
+=======
+    private Date updateDate;
+>>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
     @Column(length = 50, name = "update_user")
     private String updateUser;
     @Column(length = 50, name = "update_username")
@@ -93,11 +104,19 @@ public class HangThuySan implements Serializable {
         this.createDate = createDate;
     }
 
+<<<<<<< HEAD
     public String getUpdateDate() {
         return updateDate;
     }
 
     public void setUpdateDate(String updateDate) {
+=======
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+>>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
         this.updateDate = updateDate;
     }
 

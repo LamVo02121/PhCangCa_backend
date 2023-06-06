@@ -11,8 +11,12 @@
 <body>
     <h1 class="text-center">Danh mục hàng thủy sản</h1>
     <div>
+<<<<<<< HEAD
         <a class="btn btn-primary m-3" role="button" th:href="@{'/hangTS/newForm'}">New</a>
         <a class="btn btn-primary m-3 float-end" role="button" th:href="@{'/'}">Home</a>
+=======
+        <a class="btn btn-primary m-3" role="button" th:href="@{'/hangTS/new'}">New</a>
+>>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
     </div>
     <div th:if="${message}" class="alert alert-success text-center">
         [[${message}]]
@@ -55,7 +59,11 @@
                         <td>[[${hang.deleteUsername}]]</td>
                         <td>[[${hang.idNV}]]</td>
                         <td>
+<<<<<<< HEAD
                             <a class="btn btn-primary" role="button" th:href="@{'/hangTS/update/' + ${hang.id}}">Edit</a>
+=======
+                            <a class="btn btn-primary" role="button" th:href="@{'/hangTS/edit/' + ${hang.id}}">Edit</a>
+>>>>>>> 54d1054ee339fe8f758d474f01a8222a55ebf231
                             <a class="btn btn-danger" role="button" th:href="@{'/hangTS/delete/' + ${hang.id}}">Delete</a>
                         </td>
                     </tr>

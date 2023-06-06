@@ -1,7 +1,10 @@
 package com.example.lamnghiep2.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
 
 @Entity
@@ -11,27 +14,28 @@ public class LN_DM_Loai_Vat_Nuoi {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "code",length = 255, nullable = false)
-    private String code;
-
     @Column(name = "name", length = 255, nullable = false)
     private String name;
+
+    @Column(name = "code",length = 255, nullable = false)
+    private String code;
 
     @Column(name = "description", length = 255)
     private String description;
 
-    @Column(name = "is_active", nullable = true)
+    @Column(name = "is_active")
     private boolean is_active;
-    @Column(name = "is_delete", nullable = true)
-    private boolean is_delete;
-
+    @Column(name = "is_delete")
+    private String is_delete;
+//
     @Column(name = "create_user", length = 255)
     private String create_user;
-
+//
     @Column(name = "create_username", length = 255)
     private String create_username;
 
-    @Column(name = "update_date", columnDefinition = "Timestamp DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "update_date", nullable = false, updatable = false)
+    @CreationTimestamp
 //    @CreationTimestamp
     private Timestamp update_date;
 
@@ -50,6 +54,17 @@ public class LN_DM_Loai_Vat_Nuoi {
     @Column(name = "uid", length = 50)
     private String uid;
 
+    public LN_DM_Loai_Vat_Nuoi(String name, String code, String description) {
+        this.name = name;
+        this.code = code;
+        this.description = description;
+    }
+
+
+
+    public LN_DM_Loai_Vat_Nuoi() {
+    }
+
     public int getId() {
         return id;
     }
@@ -58,20 +73,20 @@ public class LN_DM_Loai_Vat_Nuoi {
         this.id = id;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getDescription() {
@@ -90,14 +105,18 @@ public class LN_DM_Loai_Vat_Nuoi {
         this.is_active = is_active;
     }
 
-    public boolean isIs_delete() {
+    public String getIs_delete() {
         return is_delete;
     }
 
-    public void setIs_delete(boolean is_delete) {
-        this.is_delete = is_delete;
+    public String isIs_delete() {
+        return is_delete;
     }
 
+    public void setIs_delete(String is_delete) {
+        this.is_delete = is_delete;
+    }
+//
     public String getCreate_user() {
         return create_user;
     }
@@ -105,7 +124,7 @@ public class LN_DM_Loai_Vat_Nuoi {
     public void setCreate_user(String create_user) {
         this.create_user = create_user;
     }
-
+//
     public String getCreate_username() {
         return create_username;
     }

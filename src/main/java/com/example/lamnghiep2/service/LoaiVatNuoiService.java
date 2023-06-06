@@ -18,9 +18,12 @@ public class LoaiVatNuoiService {
     }
 
     public void save(LN_DM_Loai_Vat_Nuoi LoaiVatNuoi) {
-
         repo.save(LoaiVatNuoi);
     }
+
+//    public void update(LN_DM_Loai_Vat_Nuoi LoaiVatNuoi) {
+////        repo.;
+//    }
 
     public LN_DM_Loai_Vat_Nuoi get(Integer id) throws LoaiVatNuoiNotFoundException {
         Optional<LN_DM_Loai_Vat_Nuoi> result = repo.findById(id);

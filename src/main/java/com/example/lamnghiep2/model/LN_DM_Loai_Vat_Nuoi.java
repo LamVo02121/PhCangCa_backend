@@ -53,14 +53,23 @@ public class LN_DM_Loai_Vat_Nuoi {
 
     @Column(name = "uid", length = 50)
     private String uid;
+    @Column(name = "location", columnDefinition = "json")
+    private String location;
 
-    public LN_DM_Loai_Vat_Nuoi(String name, String code, String description) {
+    public LN_DM_Loai_Vat_Nuoi(String name, String code, String description, String location) {
         this.name = name;
         this.code = code;
         this.description = description;
+        this.location = location;
     }
 
+    public String getLocation() {
+        return location;
+    }
 
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public LN_DM_Loai_Vat_Nuoi() {
     }

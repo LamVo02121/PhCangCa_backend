@@ -20,7 +20,7 @@ public class LN_DM_Loai_Vat_Nuoi {
     @Column(name = "code",length = 255, nullable = false)
     private String code;
 
-    @Column(name = "description", length = 255)
+    @Column(name = "description", length = 10000)
     private String description;
 
     @Column(name = "is_active")

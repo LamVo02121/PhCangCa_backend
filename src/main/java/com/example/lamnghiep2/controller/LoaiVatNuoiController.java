@@ -1,15 +1,11 @@
 package com.example.lamnghiep2.controller;
 
 import com.example.lamnghiep2.model.LN_DM_Loai_Vat_Nuoi;
-import com.example.lamnghiep2.repository.LoaiVatNuoiRepository;
 import com.example.lamnghiep2.service.LoaiVatNuoiNotFoundException;
 import com.example.lamnghiep2.service.LoaiVatNuoiService;
-import com.nimbusds.jose.shaded.gson.JsonArray;
-import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -17,7 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://127.0.0.1:4200/")
+@CrossOrigin(value = "http://localhost:4200", allowCredentials = "true")
 public class LoaiVatNuoiController {
     @Autowired
     private LoaiVatNuoiService service;

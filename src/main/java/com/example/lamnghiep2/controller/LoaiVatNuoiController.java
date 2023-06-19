@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @RestController
-@CrossOrigin(value = "http://localhost:4200", allowCredentials = "true")
+@CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
 public class LoaiVatNuoiController {
     @Autowired
     private LoaiVatNuoiService service;

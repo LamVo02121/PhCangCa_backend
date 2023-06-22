@@ -23,6 +23,9 @@ public class LN_DM_Loai_Vat_Nuoi {
     @Column(name = "description", length = 10000)
     private String description;
 
+    @Column(name = "image_url", length = 255)
+    private String image_url;
+
     @Column(name = "is_active")
     private boolean is_active;
     @Column(name = "is_delete")
@@ -188,5 +191,13 @@ public class LN_DM_Loai_Vat_Nuoi {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 }

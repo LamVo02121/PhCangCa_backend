@@ -32,11 +32,6 @@ public class LoaiVatNuoiController {
         return "form_add_loaivatnuoi";
     }
 
-    //    @PostMapping ("/loaivatnuoi/save")
-//    public ResponseEntity<LN_DM_Loai_Vat_Nuoi> saveLoaiVatNuoi(LN_DM_Loai_Vat_Nuoi acc) {
-//        service.save(acc);
-//        return new ResponseEntity<LN_DM_Loai_Vat_Nuoi>(acc, HttpStatus.OK);
-//    }
     @PostMapping("/loaivatnuoi/save")
     public ResponseEntity<LN_DM_Loai_Vat_Nuoi> saveLoaiVatNuoi(@RequestBody LN_DM_Loai_Vat_Nuoi acc) {
         service.save(acc);

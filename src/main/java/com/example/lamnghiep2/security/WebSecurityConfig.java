@@ -61,7 +61,11 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/api/auth/**").permitAll()
-                            .requestMatchers("/qly_loai_vat_nuoi").hasAuthority("ROLE_USER")
+//                                .requestMatchers("/qly_account").hasAuthority("ROLE_USER")
+//                                .requestMatchers("/account/{id}/**").hasAuthority("ROLE_USER")
+//                                .requestMatchers("/qly_loai_vat_nuoi").hasAuthority("ROLE_USER")
+//                                .requestMatchers("/qly_dm_nguon_goc").hasAuthority("ROLE_USER")
+//                                .requestMatchers("/nguongoc/**").hasAuthority("ROLE_USER")
                                 .anyRequest().authenticated()
                 )
                 .cors(Customizer.withDefaults());

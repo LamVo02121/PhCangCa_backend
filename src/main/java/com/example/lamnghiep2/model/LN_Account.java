@@ -24,6 +24,15 @@ public class LN_Account {
 
     @Column(name = "password", nullable = false, length = 255)
     private String password;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public int getId() {
         return id;
